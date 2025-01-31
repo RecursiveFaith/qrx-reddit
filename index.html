@@ -47,7 +47,8 @@ d?.write(`<style>${q('style')?.innerHTML}</style>${[b,bP,c].filter(Boolean).join
 async p(){let p=U()
 if(p.get('p')){let t=this
 let c=await t.o(ro,t.h())||''
-;let sp=`<url>${L.href}</url><page>${c}</page><system>${t.O.system}</system>`let r=await fetch(t.O.apiHost,{method:'POST',headers:{Authorization:' Bearer '+t.O.apiKey,'Content-Type':'application/json'},body:JSON.stringify({model:t.O.apiModel,messages:[{role:'system',content:sp},{role:'user',content:p.get('p')}],stream:false})}).then(x=>x.json())
+let sp=`<url>${L.href}</url><page>${c}</page><system>${t.O.system}</system>`
+let r=await fetch(t.O.apiHost,{method:'POST',headers:{Authorization:' Bearer '+t.O.apiKey,'Content-Type':'application/json'},body:JSON.stringify({model:t.O.apiModel,messages:[{role:'system',content:sp},{role:'user',content:p.get('p')}],stream:false})}).then(x=>x.json())
 t.t.value=r?.choices?.[0]?.message.content||r?.message.content
 await t.sv()
 p.set('p','')
